@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syed Saad Ali — Back-End Developer</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="navbar">
+    <div class="nav__logo">saad.</div>
+    <ul class="nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact" class="nav__cta">Let's Talk →</a></li>
+    </ul>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#experience" class="mob-link">Experience</a></li>
+      <li><a href="#projects" class="mob-link">Projects</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#education" class="mob-link">Education</a></li>
+      <li><a href="#certificates" class="mob-link">Certificates</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero__bg" aria-hidden="true">
+      <span class="hero__orb hero__orb--a"></span>
+      <span class="hero__orb hero__orb--b"></span>
+    </div>
+
+    <div class="hero__grid">
+      <div class="hero__content reveal">
+        <span class="hero__status">
+          <span class="hero__status-dot"></span>
+          Open to new roles &amp; freelance work
+        </span>
+
+        <h1 class="hero__headline">
+          <em>I&#39;m Saad,</em> a back-end developer
+          building <span class="hero__accent">scalable</span> systems.
+        </h1>
+
+        <p class="hero__sub">
+          I write PHP, Laravel and MySQL for a living, and I bring a QA background to it — so what
+          ships is tested, readable and quick. Currently at <strong>Olive Digital Pvt. Ltd.</strong>
+        </p>
+
+        <div class="hero__actions">
+          <a href="resume.pdf" target="_blank" class="btn btn--dark">View Resume ↗</a>
+          <a href="#projects" class="btn btn--outline">See Projects →</a>
+        </div>
+
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <strong>8</strong>
+            <span>Projects shipped<br />to production</span>
+          </div>
+          <div class="hero__stat">
+            <strong>5</strong>
+            <span>Certificates<br />&amp; internships</span>
+          </div>
+          <div class="hero__stat">
+            <strong>QA</strong>
+            <span>Background behind<br />every release</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero__visual reveal">
+        <div class="code-card">
+          <div class="code-card__bar">
+            <span class="code-card__dot"></span>
+            <span class="code-card__dot"></span>
+            <span class="code-card__dot"></span>
+            <span class="code-card__file">Developer.php</span>
+          </div>
+          <pre class="code-card__code"><code><span class="c-tag">&lt;?php</span>
+
+<span class="c-key">namespace</span> <span class="c-name">App\Portfolio</span>;
+
+<span class="c-key">final class</span> <span class="c-name">Developer</span>
+{
+    <span class="c-key">public function</span> <span class="c-fn">__construct</span>(
+        <span class="c-key">public string</span> <span class="c-var">$name</span> = <span class="c-str">'Syed Saad Ali'</span>,
+        <span class="c-key">public string</span> <span class="c-var">$role</span> = <span class="c-str">'Back-End Developer'</span>,
+        <span class="c-key">public string</span> <span class="c-var">$city</span> = <span class="c-str">'Karachi, PK'</span>,
+    ) {}
+
+    <span class="c-com">// Clean architecture, tested before it ships.</span>
+    <span class="c-key">public function</span> <span class="c-fn">stack</span>(): <span class="c-key">array</span>
+    {
+        <span class="c-key">return</span> [<span class="c-str">'PHP'</span>, <span class="c-str">'Laravel'</span>, <span class="c-str">'MySQL'</span>];
+    }
+}</code></pre>
+        </div>
+      </aside>
+    </div>
+
+    <div class="hero__footer">
+      <div class="hero__social">
+        <a href="https://linkedin.com/in/syedsaadaly" target="_blank">LINKEDIN</a>
+        <a href="https://github.com/syedsaadaly" target="_blank">GITHUB</a>
+        <a href="mailto:syedsaadaly01@gmail.com">EMAIL</a>
+      </div>
+      <a href="#about" class="hero__scroll">
+        <span class="hero__scroll-line"></span>
+        Scroll to explore
+      </a>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about section" id="about">
+    <div class="about__grid">
+      <div class="about__left reveal">
+        <div class="about__avatar">
+          <img src="assets/images/aboutme.webp" alt="Syed Saad Ali" />
+        </div>
+      </div>
+      <div class="about__right reveal">
+        <span class="section__label">About me</span>
+        <h2 class="about__heading">Back-end systems<br>built to last.</h2>
+        <p class="about__text">
+          I'm a Back-End Developer from Karachi with a strong foundation in PHP, Laravel, and MySQL. I leverage a QA
+          background to write maintainable, bug-free code — and I care about both performance and clean architecture.
+        </p>
+        <p class="about__text">
+          The back end is where I'm strongest, but I don't stop there — I'm comfortable enough with HTML,
+          CSS, JavaScript and Bootstrap to take a site from an empty folder to something responsive and
+          live, on my own.
+        </p>
+        <p class="about__text">
+          Currently working at <strong>Olive Digital Pvt. Ltd.</strong> as an Associate Back-End Developer.
+        </p>
+        <div class="about__tags">
+          <span class="tag">PHP</span>
+          <span class="tag">Laravel</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Bootstrap</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Postman</span>
+          <span class="tag">Jira</span>
+        </div>
+        <a href="#contact" class="about__cta">Let's Talk →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="section" id="experience">
+    <div class="section__header reveal">
+      <div class="section__head-text">
+        <span class="section__label">Experience</span>
+        <p class="section__note">Where I've worked, and what I actually shipped there.</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline__item reveal">
+        <div class="timeline__meta">
+          <span class="timeline__date">Jun 2025 – Present</span>
+          <span class="timeline__badge">Current</span>
+        </div>
+        <div class="timeline__body">
+          <h3 class="timeline__role">Associate Back-End Developer</h3>
+          <p class="timeline__company">Olive Digital Pvt. Ltd.</p>
+          <ul class="timeline__points">
+            <li>Developed and maintained scalable backend systems using PHP and Laravel, supporting core
+              business operations across multiple modules.</li>
+            <li>Optimized MySQL queries and indexing, reducing average query response time by up to 30%.</li>
+            <li>Collaborated with cross-functional teams to architect and deploy backend solutions for new
+              product features.</li>
+            <li>Used AI-assisted tools, including Claude, to accelerate debugging and documentation —
+              cutting turnaround time on routine tasks by around 25%.</li>
+            <li>Streamlined internal workflows by identifying and resolving codebase bottlenecks, reducing
+              bug resolution time by nearly 20%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline__item reveal">
+        <div class="timeline__meta">
+          <span class="timeline__date">May 2025 – Jul 2025</span>
+          <span class="timeline__badge timeline__badge--muted">3 months</span>
+        </div>
+        <div class="timeline__body">
+          <h3 class="timeline__role">QA Intern</h3>
+          <p class="timeline__company">ETL Online (Remote)</p>
+          <ul class="timeline__points">
+            <li>Wrote traceability matrices and test cases for various modules.</li>
+            <li>Used Jira for task tracking and bug reporting.</li>
+            <li>Collaborated in QA activities for online projects in a remote environment.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline__item reveal">
+        <div class="timeline__meta">
+          <span class="timeline__date">Aug 2023 – Sep 2023</span>
+          <span class="timeline__badge timeline__badge--muted">2 months</span>
+        </div>
+        <div class="timeline__body">
+          <h3 class="timeline__role">Web Development Intern</h3>
+          <p class="timeline__company">Codsoft (Remote)</p>
+          <ul class="timeline__points">
+            <li>Completed a remote internship focused on HTML, CSS, and JavaScript.</li>
+          </ul>
+        </div>
+      </div>  
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section" id="projects">
+    <div class="section__header reveal">
+      <div class="section__head-text">
+        <span class="section__label">Projects</span>
+        <p class="section__note">Client and product work I built or maintained the back end for.</p>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="projectsPrev" type="button" aria-label="Previous projects">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4.5 7.5 12 15 19.5" /></svg>
+        </button>
+        <button class="carousel-btn" id="projectsNext" type="button" aria-label="Next projects">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5 16.5 12 9 19.5" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel-wrap">
+      <div class="swiper projectsSwiper">
+        <div class="swiper-wrapper">
+
+          <!-- Cheerlytics -->
+          <div class="swiper-slide">
+            <article class="project__card">
+              <div class="project__img-wrap">
+                <img src="assets/images/cheer.webp" alt="Cheerlytics" loading="lazy" decoding="async" />
+              </div>
+              <div class="project__body">
+                <div class="project__tags">
+                  <span class="tag">Analytics Dashboard</span>
+                </div>
+                <h3 class="project__title">Cheerlytics</h3>
+                <p class="project__desc">Real-time data visualization and performance tracking system.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- House of Gig -->
+          <div class="swiper-slide">
+            <article class="project__card">
+              <div class="project__img-wrap">
+                <img src="assets/images/hog.webp" alt="House of Gig" loading="lazy" decoding="async" />
+              </div>
+              <div class="project__body">
+                <div class="project__tags">
+                  <span class="tag">Freelance Marketplace</span>
+                </div>
+                <h3 class="project__title">House of Gig</h3>
+                <p class="project__desc">A platform connecting skilled freelancers with global opportunities.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Kirkpatrick Racing -->
+          <div class="swiper-slide">
+            <article class="project__card">
+              <div class="project__img-wrap">
+                <img src="assets/images/kirk.webp" alt="Kirkpatrick Racing" loading="lazy" decoding="async" />
+              </div>
+              <div class="project__body">
+                <div class="project__tags">
+                  <span class="tag">Dealership &amp; Booking</span>
+                </div>
+                <h3 class="project__title">Kirkpatrick Racing</h3>
+                <p class="project__desc">Electric dirt bike dealership with an online shop and service booking flow.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Michael J. Menard -->
+          <div class="swiper-slide">
+            <article class="project__card">
+              <div class="project__img-wrap">
+                <img src="assets/images/micheal.webp" alt="Michael J. Menard" loading="lazy" decoding="async" />
+              </div>
+              <div class="project__body">
+                <div class="project__tags">
+                  <span class="tag">Portfolio CMS</span>
+                </div>
+                <h3 class="project__title">Michael J. Menard</h3>
+                <p class="project__desc">Customized personal branding site with a dynamic content manager.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Mizfitz -->
+          <div class="swiper-slide">
+            <article class="project__card">
+              <div class="project__img-wrap">
+                <img src="assets/images/mitz.webp" alt="Mizfitz" loading="lazy" decoding="async" />
+              </div>
+              <div class="project__body">
+                <div class="project__tags">
+                  <span class="tag">E-commerce</span>
+                </div>
+                <h3 class="project__title">Mizfitz</h3>
+                <p class="project__desc">Modern storefront with secure checkout and inventory management.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Pansup -->
+          <div class="swiper-slide">
+            <article class="project__card">
+              <div class="project__img-wrap">
+                <img src="assets/images/pan.webp" alt="Pansup" loading="lazy" decoding="async" />
+              </div>
+              <div class="project__body">
+                <div class="project__tags">
+                  <span class="tag">SaaS Platform</span>
+                </div>
+                <h3 class="project__title">Pansup</h3>
+                <p class="project__desc">Cloud-based solution for streamlined business operations.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Real Estate LLC -->
+          <div class="swiper-slide">
+            <article class="project__card">
+              <div class="project__img-wrap">
+                <img src="assets/images/real.webp" alt="Real Estate LLC" loading="lazy" decoding="async" />
+              </div>
+              <div class="project__body">
+                <div class="project__tags">
+                  <span class="tag">Property Portal</span>
+                </div>
+                <h3 class="project__title">Real Estate LLC</h3>
+                <p class="project__desc">Comprehensive listing engine for property buying and rentals.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Ture Help -->
+          <div class="swiper-slide">
+            <article class="project__card">
+              <div class="project__img-wrap">
+                <img src="assets/images/ture.webp" alt="Ture Help" loading="lazy" decoding="async" />
+              </div>
+              <div class="project__body">
+                <div class="project__tags">
+                  <span class="tag">Social Help Desk</span>
+                </div>
+                <h3 class="project__title">Ture Help</h3>
+                <p class="project__desc">Community support platform for managing localized assistance.</p>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+  <!-- ========== SKILLS ========== -->
+  <section class="section" id="skills">
+    <div class="section__header reveal">
+      <div class="section__head-text">
+        <span class="section__label">Skills</span>
+        <p class="section__note">The stack and tooling I reach for day to day.</p>
+      </div>
+    </div>
+
+    <div class="skills__grid">
+      <div class="skills__group reveal">
+        <h4 class="skills__group-title">Languages & Frameworks</h4>
+        <div class="skills__pills">
+          <span class="pill">PHP</span>
+          <span class="pill">Laravel</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Bootstrap</span>
+        </div>
+      </div>
+      <div class="skills__group reveal">
+        <h4 class="skills__group-title">Database & Tools</h4>
+        <div class="skills__pills">
+          <span class="pill">MySQL</span>
+          <span class="pill">GitHub</span>
+          <span class="pill">Postman</span>
+          <span class="pill">Jira</span>
+        </div>
+      </div>
+      <div class="skills__group reveal">
+        <h4 class="skills__group-title">QA & Testing</h4>
+        <div class="skills__pills">
+          <span class="pill">Manual Testing</span>
+          <span class="pill">Test Case Design</span>
+          <span class="pill">Bug Tracking</span>
+          <span class="pill">Traceability Matrix</span>
+        </div>
+      </div>
+      <div class="skills__group reveal">
+        <h4 class="skills__group-title">Soft Skills</h4>
+        <div class="skills__pills">
+          <span class="pill pill--soft">Communication</span>
+          <span class="pill pill--soft">Team Collaboration</span>
+          <span class="pill pill--soft">Problem-Solving</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== EDUCATION ========== -->
+  <section class="section" id="education">
+    <div class="section__header reveal">
+      <div class="section__head-text">
+        <span class="section__label">Education</span>
+        <p class="section__note">Where the computer-science fundamentals came from.</p>
+      </div>
+    </div>
+
+    <div class="edu__grid">
+      <div class="edu__card reveal">
+        <div class="edu__year">2021 – 2025</div>
+        <h3 class="edu__degree">Bachelor of Computer Science</h3>
+        <p class="edu__school">Sindh Madressatul Islam University</p>
+        <p class="edu__location">Karachi, Pakistan</p>
+      </div>
+      <div class="edu__card reveal">
+        <div class="edu__year">2019 – 2020</div>
+        <h3 class="edu__degree">Intermediate — Pre-Engineering</h3>
+        <p class="edu__school">Deg Govt Gulshan-e-Iqbal College</p>
+        <p class="edu__location">Karachi, Pakistan</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== CERTIFICATES ========== -->
+  <section class="section" id="certificates">
+    <div class="section__header reveal">
+      <div class="section__head-text">
+        <span class="section__label">Certificates</span>
+        <p class="section__note">Courses and internships behind the back-end &amp; QA work.</p>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="certsPrev" type="button" aria-label="Previous certificates">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4.5 7.5 12 15 19.5" /></svg>
+        </button>
+        <button class="carousel-btn" id="certsNext" type="button" aria-label="Next certificates">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5 16.5 12 9 19.5" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="carousel-wrap">
+      <div class="swiper certsSwiper">
+        <div class="swiper-wrapper">
+
+          <!-- 10Pearls University -->
+          <div class="swiper-slide">
+            <article class="cert__card">
+              <div class="cert__thumb" data-issuer="10Pearls">
+                <img src="assets/certificates/10pearls-qa-fundamentals-thumb.webp"
+                  alt="QA Fundamentals certificate — 10Pearls University" loading="lazy" decoding="async"
+                  onerror="this.remove();" />
+              </div>
+              <div class="cert__body">
+                <div class="cert__year">March 2025</div>
+                <h3 class="cert__title">QA Fundamentals</h3>
+                <p class="cert__issuer">10Pearls University</p>
+                <p class="cert__desc">Structured grounding in test case design, the defect life cycle and bug reporting
+                  — the base of my QA work.</p>
+                <div class="cert__actions">
+                  <a class="cert__link" href="assets/certificates/10pearls-qa-fundamentals.png" target="_blank">View ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ETL Online -->
+          <div class="swiper-slide">
+            <article class="cert__card">
+              <div class="cert__thumb" data-issuer="ETL Online">
+                <img src="assets/certificates/etl-online-qa-internship-thumb.webp"
+                  alt="QA Internship completion certificate — ETL Online" loading="lazy" decoding="async"
+                  onerror="this.remove();" />
+              </div>
+              <div class="cert__body">
+                <div class="cert__year">May – July 2025</div>
+                <h3 class="cert__title">QA Internship Completion</h3>
+                <p class="cert__issuer">ETL Online (Remote)</p>
+                <p class="cert__desc">Three months of remote QA — traceability matrices, test cases and bug tracking in
+                  Jira.</p>
+                <div class="cert__actions">
+                  <a class="cert__link" href="assets/certificates/etl-online-qa-internship.pdf" target="_blank">View ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Johns Hopkins University / Coursera -->
+          <div class="swiper-slide">
+            <article class="cert__card">
+              <div class="cert__thumb" data-issuer="Johns Hopkins">
+                <img src="assets/certificates/coursera-html-css-js-thumb.webp"
+                  alt="HTML, CSS and JavaScript for Web Developers certificate — Johns Hopkins University"
+                  loading="lazy" decoding="async" onerror="this.remove();" />
+              </div>
+              <div class="cert__body">
+                <div class="cert__year">August 2023</div>
+                <h3 class="cert__title">HTML, CSS &amp; JavaScript for Web Developers</h3>
+                <p class="cert__issuer">Johns Hopkins University · Coursera</p>
+                <p class="cert__desc">The front-end foundation I still build on — semantic HTML, responsive CSS and
+                  vanilla JavaScript.</p>
+                <div class="cert__actions">
+                  <a class="cert__link" href="assets/certificates/coursera-html-css-js.pdf" target="_blank">View ↗</a>
+                  <a class="cert__link cert__link--muted" href="https://coursera.org/verify/YB4UWNDAWQSV"
+                    target="_blank">Verify</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Codsoft -->
+          <div class="swiper-slide">
+            <article class="cert__card">
+              <div class="cert__thumb" data-issuer="Codsoft">
+                <img src="assets/certificates/codsoft-web-development-thumb.webp"
+                  alt="Web Development virtual internship certificate — Codsoft" loading="lazy" decoding="async"
+                  onerror="this.remove();" />
+              </div>
+              <div class="cert__body">
+                <div class="cert__year">Aug – Sep 2023</div>
+                <h3 class="cert__title">Web Development Internship</h3>
+                <p class="cert__issuer">Codsoft (Remote)</p>
+                <p class="cert__desc">A four-week virtual internship turning HTML, CSS and JavaScript into deliverable
+                  web pages.</p>
+                <div class="cert__actions">
+                  <a class="cert__link" href="assets/certificates/codsoft-web-development.jpg" target="_blank">View ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- UC Irvine / Coursera -->
+          <div class="swiper-slide">
+            <article class="cert__card">
+              <div class="cert__thumb" data-issuer="UC Irvine">
+                <img src="assets/certificates/coursera-ielts-thumb.webp"
+                  alt="IELTS Preparation specialization certificate — UC Irvine" loading="lazy" decoding="async"
+                  onerror="this.remove();" />
+              </div>
+              <div class="cert__body">
+                <div class="cert__year">April 2024</div>
+                <h3 class="cert__title">IELTS Preparation (Specialization)</h3>
+                <p class="cert__issuer">UC Irvine · Coursera</p>
+                <p class="cert__desc">A three-course specialization in writing, listening, speaking and reading — the
+                  English I use with remote teams.</p>
+                <div class="cert__actions">
+                  <a class="cert__link" href="assets/certificates/coursera-ielts.jpg" target="_blank">View ↗</a>
+                  <a class="cert__link cert__link--muted" href="https://coursera.org/verify/specialization/FGUF36K7GBTA"
+                    target="_blank">Verify</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact" id="contact">
+    <div class="contact__inner reveal">
+      <p class="section__label">Get in touch</p>
+      <h2 class="contact__heading">Let's work<br><em>together.</em></h2>
+      <p class="contact__sub">Have a project in mind or want to discuss an opportunity? I'm currently open to new roles
+        and freelance work.</p>
+      <div class="contact__actions">
+        <a href="mailto:syedsaadaly01@gmail.com" class="btn btn--dark">syedsaadaly01@gmail.com →</a>
+        <a href="tel:+923348214425" class="btn btn--outline">+92 334 8214425</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__logo">saad.</div>
+    <ul class="footer__links">
+      <li><a href="https://linkedin.com/in/syedsaadaly" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/syedsaadaly" target="_blank">GitHub</a></li>
+      <li><a href="mailto:syedsaadaly01@gmail.com">Email</a></li>
+    </ul>
+    <span class="footer__copy">© <span id="year">2026</span> Syed Saad Ali</span>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
