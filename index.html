@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet" />
 </head>
 
@@ -51,80 +51,26 @@
 
   <!-- ========== HERO ========== -->
   <section class="hero" id="home">
-    <div class="hero__bg" aria-hidden="true">
-      <span class="hero__orb hero__orb--a"></span>
-      <span class="hero__orb hero__orb--b"></span>
-    </div>
+    <div class="hero__inner reveal">
+      <span class="hero__eyebrow">Back-End Developer · Karachi, PK</span>
 
-    <div class="hero__grid">
-      <div class="hero__content reveal">
-        <span class="hero__status">
-          <span class="hero__status-dot"></span>
-          Open to new roles &amp; freelance work
-        </span>
+      <h1 class="hero__headline">
+        <em>I&#39;m Saad,</em> a back-end developer
+        building <span class="hero__accent">scalable</span> systems.
+      </h1>
 
-        <h1 class="hero__headline">
-          <em>I&#39;m Saad,</em> a back-end developer
-          building <span class="hero__accent">scalable</span> systems.
-        </h1>
+      <p class="hero__sub">
+        I write PHP, Laravel and MySQL for a living, and I bring a QA background to it — so what
+        ships is tested, readable and quick. Currently at <strong>Olive Digital Pvt.&nbsp;Ltd.</strong>
+      </p>
 
-        <p class="hero__sub">
-          I write PHP, Laravel and MySQL for a living, and I bring a QA background to it — so what
-          ships is tested, readable and quick. Currently at <strong>Olive Digital Pvt. Ltd.</strong>
-        </p>
-
-        <div class="hero__actions">
-          <a href="resume.pdf" target="_blank" class="btn btn--dark">View Resume ↗</a>
-          <a href="#projects" class="btn btn--outline">See Projects →</a>
-        </div>
-
-        <div class="hero__stats">
-          <div class="hero__stat">
-            <strong>8</strong>
-            <span>Projects shipped<br />to production</span>
-          </div>
-          <div class="hero__stat">
-            <strong>5</strong>
-            <span>Certificates<br />&amp; internships</span>
-          </div>
-          <div class="hero__stat">
-            <strong>QA</strong>
-            <span>Background behind<br />every release</span>
-          </div>
-        </div>
+      <div class="hero__actions">
+        <a href="resume.pdf" target="_blank" class="btn btn--dark">View Resume ↗</a>
+        <a href="#projects" class="btn btn--outline">See Projects →</a>
       </div>
-
-      <aside class="hero__visual reveal">
-        <div class="code-card">
-          <div class="code-card__bar">
-            <span class="code-card__dot"></span>
-            <span class="code-card__dot"></span>
-            <span class="code-card__dot"></span>
-            <span class="code-card__file">Developer.php</span>
-          </div>
-          <pre class="code-card__code"><code><span class="c-tag">&lt;?php</span>
-
-<span class="c-key">namespace</span> <span class="c-name">App\Portfolio</span>;
-
-<span class="c-key">final class</span> <span class="c-name">Developer</span>
-{
-    <span class="c-key">public function</span> <span class="c-fn">__construct</span>(
-        <span class="c-key">public string</span> <span class="c-var">$name</span> = <span class="c-str">'Syed Saad Ali'</span>,
-        <span class="c-key">public string</span> <span class="c-var">$role</span> = <span class="c-str">'Back-End Developer'</span>,
-        <span class="c-key">public string</span> <span class="c-var">$city</span> = <span class="c-str">'Karachi, PK'</span>,
-    ) {}
-
-    <span class="c-com">// Clean architecture, tested before it ships.</span>
-    <span class="c-key">public function</span> <span class="c-fn">stack</span>(): <span class="c-key">array</span>
-    {
-        <span class="c-key">return</span> [<span class="c-str">'PHP'</span>, <span class="c-str">'Laravel'</span>, <span class="c-str">'MySQL'</span>];
-    }
-}</code></pre>
-        </div>
-      </aside>
     </div>
 
-    <div class="hero__footer">
+    <div class="hero__footer reveal">
       <div class="hero__social">
         <a href="https://linkedin.com/in/syedsaadaly" target="_blank">LINKEDIN</a>
         <a href="https://github.com/syedsaadaly" target="_blank">GITHUB</a>
@@ -159,7 +105,7 @@
           live, on my own.
         </p>
         <p class="about__text">
-          Currently working at <strong>Olive Digital Pvt. Ltd.</strong> as an Associate Back-End Developer.
+          Currently working at <strong>Olive Digital Pvt.&nbsp;Ltd.</strong> as an Associate Back-End Developer.
         </p>
         <div class="about__tags">
           <span class="tag">PHP</span>
