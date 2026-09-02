@@ -181,28 +181,9 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--border);
 }
 
-.hero__grid {
-  display: grid;
-  grid-template-columns: 1.16fr 0.84fr;
-  gap: 48px;
-  align-items: center;
-  width: 100%;
-}
-
-.hero__art {
-  min-width: 0;
-}
-
-.hero__art img {
-  width: 100%;
-  height: auto;
-  /* The artwork ships coral; this pulls it onto the site's brown without
-     touching the greys and whites, which carry no saturation to rotate. */
-  filter: hue-rotate(25deg) saturate(0.62);
-}
-
 .hero__inner {
-  min-width: 0;
+  width: 100%;
+  max-width: 980px;
 }
 
 .hero__eyebrow {
@@ -217,11 +198,12 @@ img { max-width: 100%; display: block; }
 
 .hero__headline {
   font-family: var(--font-serif);
-  font-size: clamp(38px, 4.7vw, 66px);
+  font-size: clamp(42px, 6.4vw, 88px);
   font-weight: 700;
   line-height: 1.03;
-  letter-spacing: -2.2px;
+  letter-spacing: -3px;
   color: var(--text);
+  max-width: 900px;
   margin-bottom: 34px;
 }
 
@@ -1109,9 +1091,6 @@ img { max-width: 100%; display: block; }
    RESPONSIVE  —  tablet / mobile
    ============================================ */
 @media (max-width: 900px) {
-  .hero__grid { grid-template-columns: 1fr; gap: 8px; }
-  .hero__art { max-width: 340px; margin: 0 auto; }
-
   .nav__links    { display: none; }
   .nav__hamburger { display: flex; }
 
