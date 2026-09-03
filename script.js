@@ -184,3 +184,22 @@ const certsSwiper = buildCarousel('.certsSwiper', '#certsPrev', '#certsNext', {
 // The markup carries 2026 as a fallback; this keeps it current on its own.
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// ─── HERO ANIMATION ──────────────────────────
+const heroAnim = document.getElementById('heroAnim');
+if (heroAnim) {
+  const wrap   = heroAnim.closest('.hero__anim');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // No file, no box: a missing or broken image just collapses the column.
+  heroAnim.addEventListener('error', () => { wrap.hidden = true; });
+
+  // Desktop pointers only: the artwork leans a little toward the cursor.
+  if (window.matchMedia('(hover: hover)').matches && !reduce) {
+    document.addEventListener('mousemove', (e) => {
+      const dx = (e.clientX / window.innerWidth  - 0.5) * 16;
+      const dy = (e.clientY / window.innerHeight - 0.5) * 10;
+      wrap.style.transform = `translate(${dx}px, ${dy}px)`;
+    });
+  }
+}
