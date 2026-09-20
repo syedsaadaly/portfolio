@@ -1102,6 +1102,239 @@ img { max-width: 100%; display: block; }
   color: var(--text-muted);
   letter-spacing: 0.3px;
 }
+/* ============================================
+   PRELOADER  —  microchip mark
+   ============================================ */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.6s;
+}
+
+.preloader__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Fade-out state */
+.preloader.done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader.done .preloader__inner {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Hold the page's own reveals until the curtain lifts */
+body.is-loading { overflow: hidden; }
+body.is-loading .reveal { opacity: 0; transform: translateY(28px); }
+
+/* --- Microchip (adapted from Jon Kantner's CodePen) --- */
+.microchip {
+  --chip-ink:   var(--accent);        /* core, dots, traces */
+  --chip-spark: var(--accent-light);  /* sparks and waves   */
+  display: block;
+  width: clamp(110px, 14vw, 150px);
+  height: auto;
+  color: var(--chip-ink);
+}
+
+.microchip__center,
+.microchip__dot,
+.microchip__line,
+.microchip__lines,
+.microchip__spark,
+.microchip__wave {
+  animation-duration: 5s;
+  animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+  animation-iteration-count: infinite;
+}
+
+.microchip__core,
+.microchip__dot  { fill: var(--chip-ink); }
+.microchip__line { stroke: var(--chip-ink); }
+
+.microchip__spark,
+.microchip__wave {
+  animation-timing-function: linear;
+  stroke: var(--chip-spark);
+}
+
+.microchip__center,
+.microchip__wave { transform-origin: 25px 25px; }
+.microchip__center { animation-name: chipCenter; }
+
+.microchip__lines {
+  animation-name: chipLines;
+  transform-origin: 54px 54px;
+}
+
+/* Dots: pop in after their trace reaches them */
+.microchip__dot--1 { animation-name: chipDotA; transform-origin: 3px 38px; }
+.microchip__dot--2 { animation-name: chipDotB; transform-origin: 3px 54px; }
+.microchip__dot--3 { animation-name: chipDotA; transform-origin: 3px 70px; }
+.microchip__dot--4 { animation-name: chipDotA; transform-origin: 3px 3px; }
+.microchip__dot--5 { animation-name: chipDotC; transform-origin: 20px 3px; }
+.microchip__dot--6 { animation-name: chipDotD; transform-origin: 3px 30px; }
+.microchip__dot--7 { animation-name: chipDotA; transform-origin: 37px 3px; }
+.microchip__dot--8 { animation-name: chipDotE; transform-origin: 54px 3px; }
+.microchip__dot--9 { animation-name: chipDotA; transform-origin: 71px 3px; }
+
+/* Traces: drawn outward from the core */
+.microchip__line--1,
+.microchip__line--3 { animation-name: chipLine59to17; }
+.microchip__line--2 { animation-name: chipLine42to0; }
+.microchip__line--4 { animation-name: chipLine78to18; }
+.microchip__line--5 { animation-name: chipLine60to0; }
+.microchip__line--6 { animation-name: chipLine91to31; }
+.microchip__line--7,
+.microchip__line--9 { animation-name: chipLine60to17; }
+.microchip__line--8 { animation-name: chipLine43to0; }
+
+/* Sparks: run along the traces */
+.microchip__spark--1,
+.microchip__spark--3 { animation-name: chipSparkA; }
+.microchip__spark--2 { animation-name: chipSparkB; }
+.microchip__spark--4 { animation-name: chipSparkC; }
+.microchip__spark--5 { animation-name: chipSparkD; }
+.microchip__spark--6 { animation-name: chipSparkE; }
+.microchip__spark--7,
+.microchip__spark--9 { animation-name: chipSparkF; }
+.microchip__spark--8 { animation-name: chipSparkG; }
+
+.microchip__wave--1 { animation-name: chipWave1; }
+.microchip__wave--2 { animation-name: chipWave2; }
+
+@keyframes chipCenter {
+  from, to    { transform: scale(0); }
+  12.5%, 75%  { transform: scale(1); }
+}
+
+@keyframes chipLines {
+  from        { opacity: 1; transform: scale(0); }
+  12.5%, 75%  { opacity: 1; transform: scale(1); }
+  93.75%, to  { opacity: 0; transform: scale(0.5); }
+}
+
+@keyframes chipDotA {
+  from, 20%, 81.25%, to { transform: scale(0); }
+  32.5%, 68.75%         { transform: scale(1); }
+}
+@keyframes chipDotB {
+  from, 10.5%, 87.5%, to { transform: scale(0); }
+  23%, 75%               { transform: scale(1); }
+}
+@keyframes chipDotC {
+  from, 11.5%, 87.5%, to { transform: scale(0); }
+  24%, 75%               { transform: scale(1); }
+}
+@keyframes chipDotD {
+  from, 14.5%, 85%, to { transform: scale(0); }
+  27%, 72.5%           { transform: scale(1); }
+}
+@keyframes chipDotE {
+  from, 11%, 87.5%, to { transform: scale(0); }
+  23.5%, 75%           { transform: scale(1); }
+}
+
+@keyframes chipLine59to17 {
+  from, 93.75%, to { stroke-dashoffset: 59; }
+  25%, 68.75%      { stroke-dashoffset: 17; }
+}
+@keyframes chipLine42to0 {
+  from, 93.75%, to { stroke-dashoffset: 42; }
+  25%, 68.75%      { stroke-dashoffset: 0; }
+}
+@keyframes chipLine78to18 {
+  from, 93.75%, to { stroke-dashoffset: 78; }
+  25%, 68.75%      { stroke-dashoffset: 18; }
+}
+@keyframes chipLine60to0 {
+  from, 93.75%, to { stroke-dashoffset: 60; }
+  25%, 68.75%      { stroke-dashoffset: 0; }
+}
+@keyframes chipLine91to31 {
+  from, 93.75%, to { stroke-dashoffset: 91; }
+  25%, 68.75%      { stroke-dashoffset: 31; }
+}
+@keyframes chipLine60to17 {
+  from, 93.75%, to { stroke-dashoffset: 60; }
+  25%, 68.75%      { stroke-dashoffset: 17; }
+}
+@keyframes chipLine43to0 {
+  from, 93.75%, to { stroke-dashoffset: 43; }
+  25%, 68.75%      { stroke-dashoffset: 0; }
+}
+
+@keyframes chipSparkA {
+  from, 27.5% { stroke-dashoffset: 59; }
+  50%, 52.5%  { stroke-dashoffset: -25; }
+  75%, to     { stroke-dashoffset: -109; }
+}
+@keyframes chipSparkB {
+  from, 27.5% { stroke-dashoffset: 42; }
+  50%, 52.5%  { stroke-dashoffset: -42; }
+  75%, to     { stroke-dashoffset: -126; }
+}
+@keyframes chipSparkC {
+  from, 27.5% { stroke-dashoffset: 78; }
+  50%, 52.5%  { stroke-dashoffset: -42; }
+  75%, to     { stroke-dashoffset: -162; }
+}
+@keyframes chipSparkD {
+  from, 27.5% { stroke-dashoffset: 60; }
+  50%, 52.5%  { stroke-dashoffset: -60; }
+  75%, to     { stroke-dashoffset: -180; }
+}
+@keyframes chipSparkE {
+  from, 27.5% { stroke-dashoffset: 91; }
+  50%, 52.5%  { stroke-dashoffset: -29; }
+  75%, to     { stroke-dashoffset: -149; }
+}
+@keyframes chipSparkF {
+  from, 27.5% { stroke-dashoffset: 60; }
+  50%, 52.5%  { stroke-dashoffset: -26; }
+  75%, to     { stroke-dashoffset: -112; }
+}
+@keyframes chipSparkG {
+  from, 27.5% { stroke-dashoffset: 43; }
+  50%, 52.5%  { stroke-dashoffset: -43; }
+  75%, to     { stroke-dashoffset: -129; }
+}
+
+@keyframes chipWave1 {
+  from, 0%, 25%, 50%, 75% {
+    stroke-width: 6px;
+    transform: scale(1);
+  }
+  10%, 35%, 60%, 85%, to {
+    animation-timing-function: steps(1);
+    stroke-width: 0;
+    transform: scale(2);
+  }
+}
+@keyframes chipWave2 {
+  from, 5%, 30%, 55%, 80% {
+    stroke-width: 6px;
+    transform: scale(1);
+  }
+  15%, 40%, 65%, 90%, to {
+    animation-timing-function: steps(1);
+    stroke-width: 0;
+    transform: scale(2);
+  }
+}
 
 /* ============================================
    REVEAL ANIMATION
@@ -1255,4 +1488,7 @@ img { max-width: 100%; display: block; }
   }
 
   .reveal { opacity: 1; transform: none; }
+  .preloader { display: none; }
+  body.is-loading { overflow: auto; }
+  body.is-loading .reveal { opacity: 1; transform: none; }
 }

@@ -3,6 +3,36 @@
    script.js
    ============================================ */
 
+// ─── PRELOADER ───────────────────────────────
+(() => {
+  const preloader = document.getElementById('preloader');
+  if (!preloader) return;
+
+  const start  = performance.now();
+  const MIN_MS = 1600;   // let the chip pop in and its traces draw, even on a cached load
+  const MAX_MS = 4500;   // never trap a visitor behind a stalled asset
+  let finished = false;
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    preloader.classList.add('done');
+    document.body.classList.remove('is-loading');
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once: true });
+    setTimeout(() => preloader.remove(), 900);   // fallback if transitionend never fires
+  }
+
+  function onLoad() {
+    const elapsed = performance.now() - start;
+    setTimeout(finish, Math.max(0, MIN_MS - elapsed));
+  }
+
+  if (document.readyState === 'complete') onLoad();
+  else window.addEventListener('load', onLoad, { once: true });
+
+  setTimeout(finish, MAX_MS);
+})();
+
 // ─── NAV SCROLL EFFECT ───────────────────────
 const navbar = document.getElementById('navbar');
 
